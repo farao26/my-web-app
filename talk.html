@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talk to Staff</title>
+  <style>
+    body {
+      background-color: #f9f3ea;
+      color: #5e4635;
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #3e2e20;
+      margin-bottom: 1rem;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      background-color: #d6a77a;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #c68b5f;
+    }
+
+    .back-btn {
+      margin-top: 3rem;
+      background-color: #a0825c;
+    }
+
+    .back-btn:hover {
+      background-color: #927452;
+    }
+  </style>
+</head>
+<body>
+  <h1>🗣️ Talk to Staff</h1>
+
+  <div class="button-container">
+    <button class="btn" onclick="speak('美味しいです')">Delicious!（美味しいです）</button>
+    <button class="btn" onclick="speak('ありがとうございます')">Thank you!（ありがとう）</button>
+    <button class="btn" onclick="speak('お会計お願いします')">Check, please.（お会計）</button>
+    <button class="btn" onclick="speak('お水をください')">Water, please（お水ください）</button>
+    <button class="btn" onclick="speak('もう一品注文したいです')">I'd like to order one more（もう一品）</button>
+    <button class="btn" onclick="speak('とても満足しました')">That was great!（満足しました）</button>
+    <button class="btn" onclick="speak('また来ます')">I'll come again（また来ます）</button>
+  </div>
+
+  <a href="main.html" class="btn back-btn">← Back to Main</a>
+
+  <script>
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'ja-JP';
+      utterance.rate = 1.0;
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
+
