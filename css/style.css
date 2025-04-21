@@ -1,0 +1,49 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.logo, .app-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  max-height: 60vh;
+  opacity: 0;
+}
+
+@keyframes logoFade {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.logo {
+  animation: logoFade 4s ease-in-out forwards;
+}
+
+@keyframes appFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.app-name {
+  animation: appFadeIn 2s ease forwards;
+  animation-delay: 15s;
+}
